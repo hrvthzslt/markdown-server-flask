@@ -10,10 +10,7 @@ class Content(TypedDict):
     content: str
 
 
-type LoadedFile = Optional[io]
-
-
-def generate_content(file: LoadedFile) -> Content:
+def generate_content(file: Optional[io]) -> Content:
     if file is None:
         return None
 
@@ -24,7 +21,7 @@ def generate_content(file: LoadedFile) -> Content:
     return {"title": title, "content": content}
 
 
-def load_file(path: str) -> LoadedFile:
+def load_file(path: str) -> Optional[io]:
     try:
         return open("content/" + path + "/index.md", "r")
     except FileNotFoundError:

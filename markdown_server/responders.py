@@ -4,10 +4,8 @@ from flask import render_template
 
 from markdown_server import domain
 
-type ActionResult = Optional[domain.Content]
 
-
-def response_content(action_result: ActionResult) -> tuple[str, int]:
+def response_content(action_result: Optional[domain.Content]) -> tuple[str, int]:
     if action_result is None:
         return render_template("404.html"), 404
 
