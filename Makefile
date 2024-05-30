@@ -15,3 +15,10 @@ clean:
 	docker rm $$(docker ps -a -q --filter ancestor=$(IMAGE_TAG))
 	docker rmi $(IMAGE_TAG)
 
+VENV=env
+PYTHON=$(VENV)/bin/python3
+
+dev:
+	python3 -m venv $(VENV)
+	$(PYTHON) -m pip install -r requirements.txt
+	$(PYTHON) -m flask run --debug -p $(PORT)
