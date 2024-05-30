@@ -10,7 +10,7 @@ class Content(TypedDict):
     content: str
 
 
-def generate_content(file: Optional[io]) -> Content:
+def generate_content(file: Optional[io]) -> Optional[Content]:
     if file is None:
         return None
 
