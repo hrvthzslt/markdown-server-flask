@@ -2,6 +2,8 @@
 
 Simple markdown server written with Flask.
 
+**You can read this README in a structured manner if you run the server.**
+
 ## Content management
 
 This is a simple content management system that uses Flask and Markdown to serve content from a directory. The content is written in Markdown and converted to HTML on the fly.
@@ -59,7 +61,7 @@ make dev-build
 
 ### Running
 
-Run the `dev-build` target than, run the Flask server.
+Run the `dev-build` target than run the Flask server.
 
 ```bash
 make dev-run
@@ -97,6 +99,14 @@ make build
 make run
 ```
 
+## Running Tests
+
+Run the `build` target than run the tests in the container.
+
+```bash
+make test
+```
+
 ### Stopping the container
 
 ```bash
@@ -108,6 +118,5 @@ make stop
 ```bash
 make clean
 ```
-
 
 Since we can chain make targets, setting up would be `make build run` and tearing down would be `make stop clean`.

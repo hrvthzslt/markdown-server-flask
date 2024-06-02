@@ -18,7 +18,7 @@ make dev-build
 
 ## Running
 
-Run the `dev-build` target than, run the Flask server.
+Run the `dev-build` target than run the Flask server.
 
 ```bash
 make dev-run
