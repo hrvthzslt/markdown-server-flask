@@ -15,7 +15,7 @@ def generate_content(file: Optional[io]) -> Optional[Content]:
         return None
 
     frontmatter_file = frontmatter.load(file)
-    content = markdown.markdown(frontmatter_file.content, extensions=["fenced_code"])
+    content = markdown.markdown(frontmatter_file.content, extensions=["fenced_code", "tables"])
     title = frontmatter_file.metadata.get("title", "Markdown Server")
 
     return {"title": title, "content": content}

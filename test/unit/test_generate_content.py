@@ -21,7 +21,7 @@ class TestGenerateContent(unittest.TestCase):
 
         mock_frontmatter_load.assert_called_once_with(mock_file)
         mock_markdown.assert_called_once_with(
-            "mock_content", extensions=["fenced_code"]
+            "mock_content", extensions=["fenced_code", "tables"]
         )
         expected_result = {"title": "Mock Title", "content": "rendered_content"}
         self.assertEqual(result, expected_result)
