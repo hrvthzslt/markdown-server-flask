@@ -26,7 +26,7 @@ title: Page title
 
 ## Route example
 
-This markdown is placed in the `content/content_management/route_example/index.md` path.
+One markdown is placed in the `content/content_management/route_example/index.md` path.
 
 The file tree looks like:
 
@@ -79,7 +79,7 @@ make dev-test
 
 There is one package in the project: `markdown_server`. It is registered as a blueprint in the main Flask app.
 
-The **action-domain-responder** pattern is organized in python module named by their responsibility. For example there is a `domain.py` module wich holds methods for reading the markdown files, and generating html as content.
+The **action-domain-responder** pattern is organized in python modules named by their responsibility. For example there is a `domain.py` module wich holds methods for reading the markdown files, and generating html as content.
 
 ## Containerization
 
