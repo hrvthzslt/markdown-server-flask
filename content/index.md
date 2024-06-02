@@ -10,6 +10,6 @@ Simple markdown server written with Flask.
 
 [Rendering](rendering)
 
-Dev environment
+[Development](development)
 
-Containerized environment
+[Containerization](containerization)
