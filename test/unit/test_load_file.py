@@ -11,7 +11,8 @@ class TestLoadFile(unittest.TestCase):
         result = domain.load_file(path)
         self.assertIsNotNone(result)
         mock_file.assert_called_once_with("content/some_path/index.md", "r")
-        result.close()
+        if result is not None:
+            result.close()
 
     @patch("builtins.open", side_effect=FileNotFoundError)
     def test_load_file_file_not_found(self, mock_file):
