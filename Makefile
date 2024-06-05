@@ -3,7 +3,6 @@
 
 IMAGE_TAG := markdown_server
 PORT := 8000
-VENV_NAME := env
 
 help:
 	@grep -h -E '^[a-zA-Z0-9_-]+:.*?# .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?# "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -27,9 +26,9 @@ clean: # Remove all related docker images and containers
 
 .PHONY: test
 test: build # Run the unit tests in container
-	docker run -it $(IMAGE_TAG) bash -c "python -m unittest discover -s test/unit/"
+	docker run -it $(IMAGE_TAG) bash -c "python -m unittest discover -s test/"
 
-VENV=env
+VENV=venv
 PYTHON=$(VENV)/bin/python3
 
 .PHONY: dev-build
@@ -43,4 +42,4 @@ dev-run: dev-build # Run the server in the virtual environment
 
 .PHONY: dev-stop
 dev-test: # Run the unit tests in the virtual environment
-	$(PYTHON) -m unittest discover -s test/unit/
+	$(PYTHON) -m unittest discover -s test/
