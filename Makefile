@@ -25,7 +25,7 @@ clean: # Remove all related docker images and containers
 	docker rmi $(IMAGE_TAG)
 
 .PHONY: test
-test: build # Run the unit tests in container
+test: # Run the unit tests in container
 	docker run -it $(IMAGE_TAG) bash -c "python -m unittest discover -s test/"
 
 VENV=venv
@@ -37,7 +37,7 @@ dev-build: # Create a virtual environment and install the dependencies
 	$(PYTHON) -m pip install -r requirements.txt
 
 .PHONY: dev-run
-dev-run: dev-build # Run the server in the virtual environment
+dev-run: # Run the server in the virtual environment
 	$(PYTHON) -m flask run --debug -p $(PORT)
 
 .PHONY: dev-stop

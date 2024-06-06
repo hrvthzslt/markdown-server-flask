@@ -61,7 +61,7 @@ make dev-build
 
 ### Running
 
-Run the `dev-build` target than run the Flask server.
+Start the Flask server in the virtual environment in debug mode.
 
 ```bash
 make dev-run
@@ -101,7 +101,7 @@ make run
 
 ## Running Tests
 
-Run the `build` target than run the tests in the container.
+Run the tests in the container.
 
 ```bash
 make test

@@ -22,7 +22,7 @@ make run
 
 ## Running Tests
 
-Run the `build` target than run the tests in the container.
+Run the tests in the container.
 
 ```bash
 make test
