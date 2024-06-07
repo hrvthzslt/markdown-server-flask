@@ -26,7 +26,15 @@ clean: # Remove all related docker images and containers
 
 .PHONY: test
 test: # Run the unit tests in container
-	docker run -it $(IMAGE_TAG) bash -c "python -m unittest discover -s test/"
+	docker run $(IMAGE_TAG) bash -c "python -m unittest discover -s test/"
+
+.PHONY: format-check
+format-check: # Run the format in container
+	docker run $(IMAGE_TAG) bash -c "python -m black --check ."
+
+.PHONY: lint
+lint: # Run linting in container
+	docker run $(IMAGE_TAG) bash -c "python -m ruff check ."
 
 VENV=venv
 PYTHON=$(VENV)/bin/python3
@@ -40,6 +48,14 @@ dev-build: # Create a virtual environment and install the dependencies
 dev-run: # Run the server in the virtual environment
 	$(PYTHON) -m flask run --debug -p $(PORT)
 
-.PHONY: dev-stop
+.PHONY: dev-test
 dev-test: # Run the unit tests in the virtual environment
 	$(PYTHON) -m unittest discover -s test/
+
+.PHONY: dev-format
+dev-format: # Format the code using black
+	$(PYTHON) -m black .
+
+.PHONY: dev-lint
+dev-lint: # Lint the code using ruff
+	$(PYTHON) -m ruff check .

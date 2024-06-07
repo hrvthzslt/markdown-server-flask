@@ -1,0 +1,15 @@
+name: Quality check - Build and test
+run-name: ${{ github.actor }} is running ${{ github.workflow }} on ${{ github.repository }}
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Check format and lint code
+        run: 'make build format-check lint test'

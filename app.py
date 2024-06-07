@@ -1,6 +1,8 @@
 from flask import Flask
 
-from src.blueprint.markdown_server.blueprint import blueprint as markdown_server_blueprint
+from src.blueprint.markdown_server.blueprint import (
+    blueprint as markdown_server_blueprint,
+)
 from src.infrastructure.cache import cache
 
 app = Flask(__name__)
