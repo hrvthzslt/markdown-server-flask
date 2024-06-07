@@ -2,7 +2,7 @@ from typing import Optional
 
 from flask import render_template
 
-from markdown_server import domain
+from src.blueprint.markdown_server import domain
 
 
 def response_content(action_result: Optional[domain.Content]) -> tuple[str, int]:

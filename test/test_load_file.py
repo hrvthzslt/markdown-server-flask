@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import mock_open, patch
 
-from markdown_server import domain
+from src.blueprint.markdown_server import domain
 
 
 class TestLoadFile(unittest.TestCase):

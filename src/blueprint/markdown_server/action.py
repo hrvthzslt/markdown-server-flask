@@ -1,4 +1,4 @@
-from markdown_server import domain, responder
+from src.blueprint.markdown_server import domain, responder
 
 
 def index(path: str) -> tuple[str, int]:

@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock, patch
 
-from markdown_server import domain
+from src.blueprint.markdown_server import domain
 
 
 class TestGenerateContent(unittest.TestCase):

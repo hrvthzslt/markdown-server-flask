@@ -15,7 +15,7 @@ title: Rendering
 ```python
 from flask import Flask
 
-from markdown_server.app import app as markdown_server_app
+from src.blueprint.markdown_server.app import app as markdown_server_app
 
 app = Flask(__name__)
 app.register_blueprint(markdown_server_app)
