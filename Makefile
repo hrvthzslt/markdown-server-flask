@@ -36,6 +36,10 @@ format-check: # Run the format in container
 lint: # Run linting in container
 	docker run $(IMAGE_TAG) bash -c "python -m ruff check ."
 
+.PHONY: git-hook
+git-hook: # Set the git hook path
+	git config core.hooksPath .git_hooks
+
 VENV=venv
 PYTHON=$(VENV)/bin/python3
 
@@ -55,6 +59,10 @@ dev-test: # Run the unit tests in the virtual environment
 .PHONY: dev-format
 dev-format: # Format the code using black
 	$(PYTHON) -m black .
+
+.PHONY: dev-format-check
+dev-format: # Check the code format using black
+	$(PYTHON) -m black --check .
 
 .PHONY: dev-lint
 dev-lint: # Lint the code using ruff

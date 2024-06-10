@@ -1,0 +1,4 @@
+#!/bin/bash
+
+make dev-format-check dev-lint dev-test
+
