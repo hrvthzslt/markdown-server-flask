@@ -61,7 +61,7 @@ dev-format: # Format the code using black
 	$(PYTHON) -m black .
 
 .PHONY: dev-format-check
-dev-format: # Check the code format using black
+dev-format-check: # Check the code format using black
 	$(PYTHON) -m black --check .
 
 .PHONY: dev-lint
