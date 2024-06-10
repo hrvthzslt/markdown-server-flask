@@ -41,10 +41,6 @@ The file tree looks like:
 
 Compare this path to the URL: `/content_management/route_example`.
 
-## Styling
-
-For styling <a href="https://matcha.mizu.sh/" target="__blank">matcha.css</a> is used. It is a simple and clean classless CSS framework.
-
 ## Development
 
 This project needs Python 3.11 or newer to run. Development was done in classic virtual environment (venv).

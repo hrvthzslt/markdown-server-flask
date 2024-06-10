@@ -46,10 +46,6 @@ if __name__ == "__main__":
 
 ---
 
-## Styling
-
-For styling <a href="https://matcha.mizu.sh/" target="__blank">matcha.css</a> is used. It is a simple and clean classless CSS framework.
-
 ## Links
 
 [Back](/)

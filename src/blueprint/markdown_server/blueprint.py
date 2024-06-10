@@ -3,7 +3,13 @@ from flask import Blueprint
 from src.blueprint.markdown_server import action
 from src.infrastructure.cache import cache
 
-blueprint = Blueprint("markdown_server_app", __name__, template_folder="templates")
+blueprint = Blueprint(
+    "markdown_server_app",
+    __name__,
+    template_folder="templates",
+    static_folder="static",
+    static_url_path="/markdown_server/static",
+)
 
 
 @blueprint.route("/", defaults={"path": ""})
