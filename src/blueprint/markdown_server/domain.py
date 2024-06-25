@@ -1,4 +1,4 @@
-import io
+from io import TextIOWrapper
 from typing import Optional, TypedDict
 
 import frontmatter
@@ -10,7 +10,7 @@ class Content(TypedDict):
     content: str
 
 
-def generate_content(file: Optional[io.TextIOWrapper]) -> Optional[Content]:
+def generate_content(file: Optional[TextIOWrapper]) -> Optional[Content]:
     if file is None:
         return None
 
@@ -23,7 +23,7 @@ def generate_content(file: Optional[io.TextIOWrapper]) -> Optional[Content]:
     return {"title": str(title), "content": content}
 
 
-def load_file(path: str) -> Optional[io.TextIOWrapper]:
+def load_file(path: str) -> Optional[TextIOWrapper]:
     try:
         return open("content/" + path + "/index.md", "r")
     except FileNotFoundError:
