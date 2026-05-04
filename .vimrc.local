@@ -1,0 +1,5 @@
+nnoremap <leader>t :call TagsGen('ctags -R --exclude=venv .')<CR>
+nnoremap <leader>T :call TagsGen('ctags -f venv.tags -R venv')<CR>
+
+set tags+=venv.tags
+
